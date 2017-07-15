@@ -1,14 +1,42 @@
-body{
+a{
+    text-decoration: none;
     color: white;
 }
-nav{
+
+#bg {
+  position: fixed; 
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0; 
+  width: 100%; 
+  height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+body{
+    position: relative;
+    color: white;
+    background-color: RGBA(29, 32, 41, 1.00);
     width: 100%;
-    background-color: rgba(0,0,0,.7);
+}
+nav{
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 1000;
+    width: 100%;
+    background-color: rgba(0,0,0,.6);
     height: 75px;
     position: fixed;
     display: block;
+    max-width: 1280px;
 }
 footer{
+    right: 0;
+    margin: 0 auto;
+    z-index: 1000;
     display: block;
     position: fixed;
     left: 0;
@@ -16,12 +44,26 @@ footer{
     width: 100%;
     background-color: RGBA(244, 244, 244, 1.00);
     height: 75px;
+    max-width: 1280px;
+}
+ng-view{
+    right: 0;
+    margin: 0 auto;
+    display: block;
+    position: fixed;
+    top:0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    max-width: 1280px;
+    overflow: auto;
 }
 .copyright{
-    font-size: 24px;
+    font-size: 18px;
     color: RGBA(211, 212, 214, 1.00);
     float: right;
-    line-height: 75px;
+    line-height: 85px;
     margin-right: 15px;
 }
 nav>ul{
@@ -31,6 +73,7 @@ nav>ul{
     display: inline-block;
     height: 35px;
     margin-top: 20px;
+    vertical-align: top;
 }
 nav ul li{
     color: RGBA(63, 176, 192, 1.00);
@@ -39,6 +82,10 @@ nav ul li{
     display: inline-block;
     margin: 0 50px;
     line-height: 35px;
+}
+nav ul li.active{
+    color: white;
+    border-bottom: solid 3px white;
 }
 
 #cartBtn{
@@ -58,5 +105,63 @@ nav ul li{
     background-color: RGBA(63, 176, 192, 1.00);
 }
 #logo{
-    width: 150px;
+    width: 200px;
+}
+
+footer img{
+    margin-top: 25px;
+    height: 35px;
+    margin-left: 25px;
+}
+nav img{
+    margin-top: 13px;
+    margin-left: 25px;
+    margin-right: 50px;
+    height: 50px;
+}
+.title{
+    display: inline-block;
+    position: absolute;
+    top: 400px;
+    font-size: 48px;
+    left: 80px;
+    width: 350px;
+}
+.titleBtn{
+    display: inline-block;
+    position: absolute;
+    top: 525px;
+    left: 80px;
+    background-color: RGBA(63, 176, 192, 1.00);
+    border-radius: 3px;
+    padding: 20px;
+}
+#apparel{
+    max-width: 1280px;
+    width: 100%;
+
+}
+#apparelContainer{
+    padding: 75px;
+    overflow: auto;
+}
+.itemBox{
+    display: inline-block;
+    width: 29%;
+    margin: 0 2% 40px 2%; 
+}
+.itemBox img{
+    width: 100%;
+}
+.itemBoxTitle{
+    padding: 10px 0;
+}
+.itemTitle{
+    color:RGBA(122, 125, 136, 1.00);
+    font-size: 20px;
+}
+.itemPrice{
+    color:RGBA(63, 176, 192, 1.00);
+    font-size: 20px;
+    float: right;
 }
