@@ -3,9 +3,25 @@
     <head>  
         <base href='/'>
         <title>Covalence Student Store</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
+        <nav>   
+            <a href="/"><img id="logo" src="#"></a>
+            <ul>
+                <a href="#"><li>APPAREL</li></a>
+                <a href="#"><li>MISC</li></a>
+            </ul>
+            <div id="cartBtn">
+                <span>Cart</span><span id="cartEmblem">0</span>
+            </div>
+        </nav>
         <ng-view></ng-view>
+        <footer>
+            <img src='#'>
+            <span class="copyright">Copyright Covalence LLC</span>
+        </footer>
         <!-- Library Scripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
