@@ -14,7 +14,7 @@
                 <a href="/misc"><li>MISC</li></a>
             </ul>
             <div id="cartBtn">
-                <span>Cart</span><span id="cartEmblem">0</span>
+                <span>Cart</span><span class="cartEmblem">0</span>
             </div>
         </nav>
         <!-- <div id="shoppingCart">
@@ -32,5 +32,9 @@
 
         <!-- Controller Scripts -->
         <script src="controllers/controllers.js"></script>
+        <script src="https://js.stripe.com/v3/"></script>
+        <script type="text/javascript">
+            var stripe = Stripe('pk_test_someRandomKeyFromStripe');
+        </script>
     </body>
 </html>

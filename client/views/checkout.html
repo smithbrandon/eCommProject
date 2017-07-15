@@ -1,0 +1,107 @@
+<div id="cartContainer">
+    <div id="info">
+        <div class="formTitleBox">
+            <div class="col-12">
+                <span class="cartEmblem">1</span><span class="formTitle">Your Email</span>
+            </div>
+        </div>
+        <div class "col-12">
+            <input type="email" class="formInput col-single" placeholder="you@email.com">
+        </div>
+
+
+        <div class="formTitleBox">
+            <div class="col-12">
+                <span class="cartEmblem">2</span><span class="formTitle">Your Billing Address</span>
+            </div>
+        </div>
+        <div class="col-12">
+            <input type="text" class="formInput col-4" placeholder="Last">
+            <input type="text" class="formInput col-4" placeholder="First">
+            <div class="right formSub">Name</div>
+        </div>
+        <div class="col-12">
+            <input type="text" class="formInput col-4" placeholder="Phone">
+            <input type="text" class="formInput col-4" placeholder="Company (optional)">
+        </div>
+        <div class="col-12">
+            <input type="text" class="formInput col-3" placeholder="Address 2 (optional)">
+            <input type="text" class="formInput col-5" placeholder="Address 1">
+            <div class="right formSub">Address</div>
+        </div>
+        <div class="col-12">
+            <input type="text" class="col-4 formInput" placeholder="State">
+            <input type="text" class="formInput col-4" placeholder="City">
+        </div>
+        <div class="col-12">
+            <input type="text" class="col-4 formInput" placeholder="United States">
+            <input type="text" class="formInput col-4" placeholder="Zip Code">
+        </div>
+
+        <div class="formTitleBox">
+            <span class="cartEmblem">3</span><span class="formTitle">Payment Method</span>
+        </div>
+        <div class="col-12">
+            <div class="col-single formInput">
+                <input type="radio" name="payment"><span class="cc" >Credit Card</span>
+                <img class="card" src="img/visa.png" alt="">    
+                <img class="card" src="img/mastercard.png" alt="">    
+                <img class="card" src="img/american-express.png" alt="">    
+                <img class="card" src="img/discover.png" alt="">    
+            </div>
+            <div class="col-single formInput">
+                    <label for="card-field">Credit Card</label>
+                    <div id="card-field" class="col-single"></div>
+                    <p>{{ error }}</p>
+            </div>
+            <div class="col-single formInput" style="background-color: white;">
+                <input type="radio" name="payment">
+                <img src="img/paypal.png" class="card" alt="">
+                <span class="cc" >Pay with PayPal</span>
+            </div>
+        </div>
+        <div class="submitBox">
+            <h4 class="text-center" style="margin-top: 30px;">Almost done! Click the submit button to process your payment</h4>
+            <div class="submitBtn">Submit Your Order</div>
+        </div>
+    </div>
+    <div id="cartInfo">
+        <h1 class="cartTitle">Your Shopping Cart</h1>
+        <a href="/apparel">
+            <div id="cancelBtn">
+                << Cancel and continue Shopping</div>
+        </a>
+        <div class="cartItem">
+            <table>
+                <tr>
+                    <td rowspan="2"><img src="/img/covalence-store-apparel-09.png"></td>
+                    <td width="70%">Covalence Mug</td>
+                    <td width="30%">$30</td>
+                </tr>
+                <tr>
+                    <td class="cartItemRemove">Remove</td>
+                </tr>
+            </table>
+        </div>
+        <div class="cartItem">
+            <table>
+                <tr>
+                    <td rowspan="2"><img src="/img/covalence-store-apparel-09.png"></td>
+                    <td width="70%">Covalence Mug</td>
+                    <td width="30%">$30</td>
+                </tr>
+                <tr>
+                    <td class="cartItemRemove">Remove</td>
+                </tr>
+            </table>
+        </div>
+        <h1 class="cartTitle">Order Summary</h1>
+        <div class="promoBox">
+            <input type="text" placeholder="Discount Code">
+            <div>Apply</div>
+        </div>
+        <div class="cartTotal">
+            <span>Order Total:</span><span>$45</span>
+        </div>
+        </div>
+    </div>
