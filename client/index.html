@@ -1,9 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="eComm">
     <head>  
+        <base href='/'>
         <title>Covalence Student Store</title>
     </head>
     <body>
+        <ng-view></ng-view>
+        <!-- Library Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-resource.js"></script>
+        <script src="app.js"></script>
 
+        <!-- Controller Scripts -->
+        <script src="controllers/controllers.js"></script>
     </body>
 </html>
