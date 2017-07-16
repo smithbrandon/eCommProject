@@ -4,3 +4,4 @@ node_modules
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+pk-APKAJDKVW7LT4WO3TNMQ.pem
