@@ -1,4 +1,19 @@
-app.controller('welcomeCtrl', ['$scope', function ($scope) {
+app.controller('navCtrl', ['$scope','$location', function ($scope,$location) {
+
+    $scope.showCart = function(path){
+        $scope.shoppingCart = !$scope.shoppingCart;
+        if(path){
+            $location.path(path);
+        }
+    }
+    $scope.select = function(item) {
+    if (item === $scope.selected) {
+        $scope.selected = null;
+    } else {
+        $scope.selected = item;
+    }
+
+};
 
 }]).controller('productsCtrl', ['$scope', '$route', '$routeParams', function ($scope, $route, $routeParams) {
 

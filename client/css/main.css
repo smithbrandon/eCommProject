@@ -105,6 +105,7 @@ nav ul li.active{
 #cartBtn{
     float: right;
     margin-right: 25px;
+    cursor: pointer;
 }
 .cartEmblem{
     color: white;
@@ -220,12 +221,13 @@ nav img{
 .cartItem{
     padding: 10px;
 }
-.cartItem img{
+.shoppingCartItem img, .cartItem img{
     height: 75px;
     width: 75px;
     display: inline-block;
     margin: 0 10px 0 10px;
 }
+
 .cartItemPrice{
     text-align: right;
 }
@@ -273,11 +275,14 @@ td:last-child{
     font-size: 18px;
     padding: 10px;
 }
-.cartTotal{
+.cartTotal, .shoppingCartTotal{
     width: 90%;
     margin: 25px auto;
 }
-.cartTotal span:last-child{
+.shoppingCartTotal{
+    font-size: 22px;
+}
+.cartTotal span:last-child, .shoppingCartTotal span:last-child{
     float: right;
 }
 .formTitle{
@@ -294,6 +299,7 @@ td:last-child{
     padding: 10px;
     border-radius: 3px;
     float: right;
+    font-size: 14px;
 }
 
 .col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12{
@@ -341,6 +347,10 @@ td:last-child{
 .text-center{
     text-align: center;
 }
+.center{
+    position: relative;
+    margin: 0 auto;
+}
 .card{
     width: 35px;
 }
@@ -351,4 +361,84 @@ input[type="radio"]{
     vertical-align: top;
     line-height: 22px;
     padding-left: 10px;
+}
+#shoppingCart{
+    position: fixed;
+    top: 80px;
+    right: 0;
+    bottom: 80px;
+    z-index: 1002;
+    /* height: 100vh; */
+    width: 400px;
+    background-color:RGBA(239, 243, 246, 1.00);
+    color: black;
+}
+.staticMask{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001
+}
+.closeBox{
+    background-color: RGBA(63, 176, 192, 1.00);
+    display: block;
+    height: 60px;
+    color: white;
+}
+.closeBox div{
+    display: inline-block;
+    line-height: 60px;
+    font-size: 20px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+.shoppingTitle{
+    margin: 30px 20px 20px 30px;
+}
+#productWindow{
+    margin: 0 auto;
+    width: 90%;
+    border-bottom: solid 1px lightgray;
+    padding-bottom: 20px;
+}
+.shoppingCartItem td:last-child{
+    color: RGBA(63, 176, 192, 1.00);
+}
+.shoppingCartItem tr:last-child td:last-child{
+    color: red;
+}
+.checkoutBtn{
+    width: 70%;
+    margin: 0 auto;
+    background-color: RGBA(63, 176, 192, 1.00);
+    text-align: center;
+    font-size: 22px;
+    padding: 16px;
+    color: white;
+    cursor: pointer;
+}
+.taxLabel{
+    text-align: center;
+    font-size: 14px;
+    display: block;
+    margin: 25px auto 10px auto;
+}
+#emailInfo{
+    width: 80%;
+    margin: 25px auto 0 auto;
+    display: block;
+    height: 100vh;
+}
+p{
+    margin: 25px 0 25px 30px;
+    line-height: 18px;
+}
+#emailInfo h1{
+    margin-left: 30px;
+}
+textarea{
+    resize: none;
+    height: 100px;
 }

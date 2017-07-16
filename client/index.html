@@ -1,40 +1,86 @@
 <!DOCTYPE html>
-<html ng-app="eComm">
-    <head>  
-        <base href='/'>
-        <title>Covalence Student Store</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
-        <nav>   
-            <a href="/"><img id="logo" src="img/logo.svg"></a>
-            <ul>
-                <a href="/apparel"><li class="active">APPAREL</li></a>
-                <a href="/misc"><li>MISC</li></a>
-            </ul>
-            <div id="cartBtn">
-                <span>Cart</span><span class="cartEmblem">0</span>
-            </div>
-        </nav>
-        <!-- <div id="shoppingCart">
-        </div> -->
-        <ng-view class="container"></ng-view>
-        <footer>
-            <img src='img/logo-footer.svg'>
-            <span class="copyright">Copyright Covalence LLC</span>
-        </footer>
-        <!-- Library Scripts -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-resource.js"></script>
-        <script src="app.js"></script>
+<html ng-app="eComm" ng-controller="navCtrl">
 
-        <!-- Controller Scripts -->
-        <script src="controllers/controllers.js"></script>
-        <script src="https://js.stripe.com/v3/"></script>
-        <script type="text/javascript">
-            var stripe = Stripe('pk_test_someRandomKeyFromStripe');
-        </script>
-    </body>
+<head>
+    <base href='/'>
+    <title>Covalence Student Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/"><img id="logo" src="img/logo.svg"></a>
+        <ul>
+            <a href="/apparel" ng-click="activeMenu = 'apparel'">
+                <li ng-class="{active : activeMenu === 'apparel'}">APPAREL</li>
+            </a>
+            <a href="/misc" ng-click="activeMenu = 'misc'">
+                <li ng-class="{active : activeMenu === 'misc'}">MISC</li>
+            </a>
+            <a href="/contactUs" ng-click="activeMenu = 'contact'">
+                <li ng-class="{active : activeMenu === 'contact'}">CONTACT US</li>
+            </a>
+        </ul>
+        <div id="cartBtn" ng-click="showCart()">
+            <span>Cart</span><span class="cartEmblem">0</span>
+        </div>
+    </nav>
+    <div class="staticMask" ng-show="shoppingCart" ng-click="showCart()"></div>
+    <div id="shoppingCart" ng-show="shoppingCart">
+        <div class="closeBox">
+            <div ng-click="showCart()">Close</div>
+        </div>
+        <h1 class="shoppingTitle">Your Shopping Cart</h1>
+        <div id="productWindow">
+            <div class="shoppingCartItem">
+                <table>
+                    <tr>
+                        <td rowspan="2"><img src="/img/covalence-store-apparel-09.png"></td>
+                        <td width="70%">Covalence Mug</td>
+                        <td width="30%">$30</td>
+                    </tr>
+                    <tr>
+                        <td class="cartItemRemove">Remove</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="shoppingCartItem">
+                <table>
+                    <tr>
+                        <td rowspan="2"><img src="/img/covalence-store-apparel-09.png"></td>
+                        <td width="70%">Covalence Mug</td>
+                        <td width="30%">$30</td>
+                    </tr>
+                    <tr>
+                        <td class="cartItemRemove">Remove</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="shoppingCartTotal">
+            <span>Total Price</span><span>$45</span>
+        </div>
+        <div class="taxLabel">Taxes and fees included at checkout.</div>
+        <div class="checkoutBtn" ng-click="showCart('/checkout')">CHECK OUT</div>
+    </div>
+    <ng-view class="container"></ng-view>
+    <footer>
+        <img src='img/logo-footer.svg'>
+        <span class="copyright">Copyright Covalence LLC</span>
+    </footer>
+    <!-- Library Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-resource.js"></script>
+    <script src="app.js"></script>
+
+    <!-- Controller Scripts -->
+    <script src="controllers/controllers.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script type="text/javascript">
+        var stripe = Stripe('pk_test_someRandomKeyFromStripe');
+    </script>
+</body>
+
 </html>
