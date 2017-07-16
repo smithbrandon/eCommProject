@@ -365,7 +365,8 @@ input[type="radio"]{
 #shoppingCart{
     position: fixed;
     top: 80px;
-    right: 0;
+    margin-right: 50%;
+    right: -640px;
     bottom: 80px;
     z-index: 1002;
     /* height: 100vh; */
@@ -379,7 +380,12 @@ input[type="radio"]{
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 1001
+    z-index: 1001;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 .closeBox{
     background-color: RGBA(63, 176, 192, 1.00);
@@ -441,4 +447,46 @@ p{
 textarea{
     resize: none;
     height: 100px;
+}
+.singleItemContainer{
+    margin: 150px auto;
+    width: 90%;
+}
+.singleItemContainer img{
+    width: 55%;
+}
+.itemContent{
+    width: 38%;
+    padding: 3% 0;
+    display: inline-block;
+    vertical-align: top;
+    float: right;
+}
+.singleItemPrice{
+    display: block;
+    font-size: 36px;
+    color:RGBA(63, 176, 192, 1.00);
+}
+.singleItemTitle{
+    display: block;
+    font-size: 36px;
+    color: RGBA(118, 122, 134, 1.00);
+    margin: 20px 0;
+}
+.description{
+    font-size: 18px;
+    line-height: 24px;
+    color: RGBA(118, 122, 134, 1.00);
+    margin: 0;
+}
+.addToCart{
+    position: relative;
+    display: block;
+    color: white;
+    width: 150px;
+    background-color: RGBA(63, 176, 192, 1.00);
+    border-radius: 3px;
+    padding: 15px;
+    text-align: center;
+    margin-top: 30px;
 }

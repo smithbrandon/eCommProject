@@ -20,6 +20,11 @@ app.controller('navCtrl', ['$scope','$location', function ($scope,$location) {
 
     var item = $routeParams.id;
     $scope.catId = $route.current.$$route.categoryId;
+    if($scope.catId === 1){
+        $scope.hero = '/img/covalence-store-apparel-hero.jpg';
+    }else{
+        $scope.hero = '/img/covalence-store-misc-hero.jpg';
+    }
 
     $scope.items = [{
         id: 9,
@@ -70,12 +75,9 @@ app.controller('navCtrl', ['$scope','$location', function ($scope,$location) {
         title: "Aluminum Water Bottle",
         price: 35
     }]
-    var objPos = $scope.items.map(function (x) {
-        console.log(x);
-        return x.id;
-    }).indexOf(item);
-    $scope.singleItem = $scope.items[objPos];
-    console.log($scope.singleItem);
+
+    $scope.product = $scope.items[0];
+    console.log($scope.product);
 }]).controller('contactCtrl', ['$scope', function ($scope) {
 
 }]).controller('checkoutCtrl', ['$scope', function ($scope) {
