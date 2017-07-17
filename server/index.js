@@ -19,4 +19,4 @@ app.use('/api', api);
 
 app.get('*', routing.stateRouting);
 
-app.listen(process.env.PORT,process.env.IP);
+app.listen(3000);

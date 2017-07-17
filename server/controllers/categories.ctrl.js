@@ -5,6 +5,9 @@ var router = express.Router();
 
 router.route('/')
     .get(function(req, res) {
+        console.log(req.query);
+        console.log(req.params);
+        console.log(req.body);
         procedures.all(req.query.categoryid)
         .then(function(categories) {
             res.send(categories);

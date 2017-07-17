@@ -4,8 +4,8 @@ var pool = mysql.createPool({
     connectionLimit: 10,
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: 'eCommProject'
+    password: process.env.DB_PASS,
+    database: process.env.DB_SCHEMA
 })
 
 exports.pool = pool;

@@ -1,5 +1,6 @@
 var express = require('express');
 var procedures = require('../procedures/products.proc');
+var router = express.Router();
 
 router.route('/:id')
     .get(function(req, res) {

@@ -8,7 +8,7 @@ var router = express.Router();
 
 router.use('/categories', categories);
 router.use('/products', products);
-router.use('/purchases', purchases);
-router.use('/purchasesproducts', purchasesProducts);
+// router.use('/purchases', purchases);
+// router.use('/purchasesproducts', purchasesProducts);
 
 module.exports = router;
