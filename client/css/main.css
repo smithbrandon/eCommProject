@@ -1,3 +1,8 @@
+@font-face {
+    font-family: brandon;
+    src: url(BrandonGrotesque-Black.otf);
+}
+
 a{
     text-decoration: none;
     color: white;
@@ -29,6 +34,7 @@ h5{
   margin: 0 auto;
 }
 body{
+    font-family: brandon, sans-serif;
     position: relative;
     color: white;
     background-color: RGBA(29, 32, 41, 1.00);
@@ -187,6 +193,7 @@ nav img{
     width: 80%;
     border: solid 1px RGBA(211, 212, 214, 1.00);
     border-radius: 10px;
+    height: auto;
 }
 #info{
     width: 60%;
@@ -430,12 +437,12 @@ input[type="radio"]{
     font-size: 14px;
     display: block;
     margin: 25px auto 10px auto;
+    height: 100vh; 
 }
 #emailInfo{
     width: 80%;
     margin: 25px auto 0 auto;
     display: block;
-    height: 100vh;
 }
 p{
     margin: 25px 0 25px 30px;
