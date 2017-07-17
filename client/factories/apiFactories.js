@@ -1,3 +1,3 @@
-app.factory('Products',['$resource', function($resrouce){
+app.factory('Products',['$resource', function($resource){
     return $resource('/api/products/:id');
 }]);

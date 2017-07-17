@@ -1,12 +1,9 @@
 <div class="singleItemContainer">
-    <img src="{{product.img}}">
+    <img ng-src="{{product.imageurl}}">
     <div class="itemContent">
-        <div class="singleItemPrice">$30</div>
-        <div class="singleItemTitle">Covalence Mug</div>
-        <p class="description">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-             Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-              Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-               Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+        <div class="singleItemPrice">${{product.price}}</div>
+        <div class="singleItemTitle">{{product.title}}</div>
+        <p class="description">{{product.description}}
         </p>
         <div class="addToCart">ADD TO CART</div>
     </div>

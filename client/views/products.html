@@ -1,11 +1,11 @@
 <img id="apparel" src="{{hero}}" alt="">
 <div id="apparelContainer">
-    <a href="/products/{{item.id}}"  ng-repeat="item in items | filter:{ categoryId: catId}">
+    <a href="/products/{{product.id}}"  ng-repeat="product in products">
         <div class="itemBox">
-            <img src="{{item.img}}">
+            <img src="{{product.imageurl}}">
             <div class="itemBoxTitle">
-                <span class="itemTitle">{{item.title}}</span>
-                <span class="itemPrice">${{item.price | number}}</span>
+                <span class="itemTitle">{{product.title}}</span>
+                <span class="itemPrice">${{product.price | number}}</span>
             </div>
         </div>
     </a>
