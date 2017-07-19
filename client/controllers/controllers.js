@@ -70,7 +70,6 @@ app.controller('navCtrl', ['$scope','$rootScope','$location','cartService', func
         cartService.addtoCart(item);
     }
     
-<<<<<<< HEAD
 }]).controller('contactCtrl', ['$scope', 'Mail', function ($scope, Mail) {
     var emailFrom = 'covalence.store@covalence.io';
     var emailTo = ['porter.josh@hotmail.com', 'smith.brandon.e.82@gmail.com'];
@@ -87,16 +86,12 @@ app.controller('navCtrl', ['$scope','$rootScope','$location','cartService', func
             console.log('check email');
         });
     }
-
-}]).controller('checkoutCtrl', ['$scope', function ($scope) {
-=======
-}]).controller('contactCtrl', ['$scope', function ($scope) {
-        SEOService.setSEO({
-                title: 'Covalence Student Store - Contact Us',
-                image: 'http://' + $location.host() + '/img/logo-footer.svg',
-                url: $location.url,
-                description: 'Let us know what you think of the store'
-            });
+    SEOService.setSEO({
+        title: 'Covalence Student Store - Contact Us',
+        image: 'http://' + $location.host() + '/img/logo-footer.svg',
+        url: $location.url,
+        description: 'Let us know what you think of the store'
+    });
 }]).controller('checkoutCtrl', ['$scope','Purchases','cartService', function ($scope,Purchases,cartService) {
     $scope.items = cartService.show();
      SEOService.setSEO({
@@ -106,7 +101,6 @@ app.controller('navCtrl', ['$scope','$rootScope','$location','cartService', func
                 description: 'Puchase some great swag from the Covalence Student Shop'
             });
     
->>>>>>> c891507b367345f999b9747901ac51f01f81db93
     var elements = stripe.elements();
     var card = elements.create('card');
     card.mount('#card-field');
