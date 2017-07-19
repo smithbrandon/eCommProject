@@ -74,7 +74,7 @@
         <div class="cartItem" ng-repeat="item in items">
             <table>
                 <tr>
-                    <td rowspan="2"><img src="{{item.imageurl}}"></td>
+                    <td rowspan="2"><img ng-src="{{item.imageurl}}"></td>
                     <td width="70%">{{item.title}}</td>
                     <td width="30%">{{item.price}}</td>
                 </tr>

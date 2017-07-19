@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="eComm" ng-controller="navCtrl">
+<html ng-app="eComm">
 
 <head>
     <base href='/'>
@@ -22,19 +22,19 @@
 </head>
 
 <body>
-    <nav>
+    <nav ng-controller="navCtrl">
         <a href="/"><img id="logo" src="img/logo.svg"></a>
         <ul>
             <a href="/apparel" ng-click="activeMenu = 'apparel'">
-                <img src="icon_about.png" ng-show="mobile">
+                <img src="img/icon_about.png" ng-show="mobile">
                 <li ng-class="{active : activeMenu === 'apparel'}" ng-hide="mobile">APPAREL</li>
             </a>
             <a href="/misc" ng-click="activeMenu = 'misc'">
-                <img src="icon_badge.png" ng-show="mobile">
+                <img src="img/icon_badge.png" ng-show="mobile">
                 <li ng-class="{active : activeMenu === 'misc'}">MISC</li>
             </a>
             <a href="/contactUs" ng-click="activeMenu = 'contact'">
-                <img src="icon_map.png" ng-show="mobile">
+                <img src="img/icon_map.png" ng-show="mobile">
                 <li ng-class="{active : activeMenu === 'contact'}">CONTACT US</li>
             </a>
         </ul>

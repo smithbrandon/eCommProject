@@ -1,33 +1,34 @@
-app.controller('navCtrl', ['$scope','$rootScope','$location','cartService', function ($scope,$rootScope,$location, cartService) {
+app.controller('navCtrl', ['$scope','$rootScope','$location','cartService','SEOService', function($scope,$rootScope,$location, cartService,SEOService) {
 
-    
-    $scope.showCart = function(path){
+    $scope.showCart = function(local){
         $scope.shoppingCart = !$scope.shoppingCart;
         if($scope.shoppingCart){
             $scope.items = cartService.show();
             $scope.total = cartService.getTotal();
         }
-        if(path){
-            $location.path(path);
+        if(local){
+            $location.path(local);
         }
     }
+
     $scope.removeItem = function(item){
         cartService.removeFromCart(item)
     }
 
     $scope.select = function(item) {
-    if (item === $scope.selected) {
-        $scope.selected = null;
-    } else {
-        $scope.selected = item;
-    }
-            SEOService.setSEO({
-            title: 'Covalence Student Store',
-            image: 'http://' + $location.host() + "/img/covalence-store-home.jpg",
-            url: $location.url,
-            description: 'Shop the Covalence Student Store for great Merchandise'
-        });  
-};
+        if (item === $scope.selected) {
+            $scope.selected = null;
+        } else {
+            $scope.selected = item;
+        } 
+    };
+
+    SEOService.setSEO({
+        title: 'Covalence Student Store',
+        image: 'http://' + $location.host() + "/img/covalence-store-home.jpg",
+        url: $location.url,
+        description: 'Shop the Covalence Student Store for great Merchandise'
+    }); 
 
 }]).controller('productsCtrl', ['$scope','$location','Products', '$route', '$routeParams','cartService','SEOService', function ($scope, $location, Products,$route, $routeParams,cartService,SEOService) {
 
@@ -56,7 +57,7 @@ app.controller('navCtrl', ['$scope','$rootScope','$location','cartService', func
             description: 'Shop the Covalence Student Store for great swag'
         });    
     }
-    if($routeParams){
+    if($routeParams.id){
         $scope.product = Products.get({id: $routeParams.id},function(success){
             SEOService.setSEO({
                 title: 'Covalence Student Store - ' + $scope.product.title,
@@ -64,14 +65,14 @@ app.controller('navCtrl', ['$scope','$rootScope','$location','cartService', func
                 url: $location.url,
                 description: 'Purchase the Covalence ' + $scope.product.title + " from the student store"
             });   
-        });
+        });  
     }
     $scope.addToCart = function(item){
         cartService.addtoCart(item);
     }
 
     
-}]).controller('contactCtrl', ['$scope', 'Mail', function ($scope, Mail) {
+}]).controller('contactCtrl', ['$scope', 'Mail', 'SEOService','$location' ,function ($scope, Mail,SEOService,$location) {
     var emailFrom = 'covalence.store@covalence.io';
     var emailTo = ['porter.josh@hotmail.com', 'smith.brandon.e.82@gmail.com'];
     $scope.submitForm = function() {
@@ -93,15 +94,14 @@ app.controller('navCtrl', ['$scope','$rootScope','$location','cartService', func
         url: $location.url,
         description: 'Let us know what you think of the store'
     });
-}]).controller('checkoutCtrl', ['$scope','Purchases','cartService', function ($scope,Purchases,cartService) {
+}]).controller('checkoutCtrl', ['$scope','Purchases','SEOService','cartService','$location', function ($scope,Purchases,SEOService, cartService,$location) {
     $scope.items = cartService.show();
-     SEOService.setSEO({
-                title: 'Covalence Student Store - Checkout',
-                image: 'http://' + $location.host() + '/img/logo-footer.svg',
-                url: $location.url,
-                description: 'Puchase some great swag from the Covalence Student Shop'
-            });
-    
+    SEOService.setSEO({
+            title: 'Covalence Student Store - Checkout',
+            image: 'http://' + $location.host() + '/img/logo-footer.svg',
+            url: $location.url,
+            description: 'Puchase some great swag from the Covalence Student Shop'
+        });
     var elements = stripe.elements();
     var card = elements.create('card');
     card.mount('#card-field');

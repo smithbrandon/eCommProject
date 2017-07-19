@@ -2,7 +2,7 @@
 <div id="apparelContainer">
     <a href="/products/{{product.id}}"  ng-repeat="product in products">
         <div class="itemBox">
-            <img src="{{product.imageurl}}">
+            <img ng-src="{{product.imageurl}}">
             <div class="itemBoxTitle">
                 <span class="itemTitle">{{product.title}}</span>
                 <span class="itemPrice">${{product.price | number}}</span>
