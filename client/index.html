@@ -26,12 +26,15 @@
         <a href="/"><img id="logo" src="img/logo.svg"></a>
         <ul>
             <a href="/apparel" ng-click="activeMenu = 'apparel'">
-                <li ng-class="{active : activeMenu === 'apparel'}">APPAREL</li>
+                <img src="icon_about.png" ng-show="mobile">
+                <li ng-class="{active : activeMenu === 'apparel'}" ng-hide="mobile">APPAREL</li>
             </a>
             <a href="/misc" ng-click="activeMenu = 'misc'">
+                <img src="icon_badge.png" ng-show="mobile">
                 <li ng-class="{active : activeMenu === 'misc'}">MISC</li>
             </a>
             <a href="/contactUs" ng-click="activeMenu = 'contact'">
+                <img src="icon_map.png" ng-show="mobile">
                 <li ng-class="{active : activeMenu === 'contact'}">CONTACT US</li>
             </a>
         </ul>
