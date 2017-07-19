@@ -244,6 +244,7 @@ nav img{
     background-color: white;
     border-radius: 5px;
     padding: 5px 10px;
+    cursor: pointer;
 }
 table{
     display: inline-block;
@@ -372,8 +373,10 @@ input[type="radio"]{
 #shoppingCart{
     position: fixed;
     top: 80px;
-    margin-right: 50%;
-    right: -640px;
+    overflow-y: scroll;
+    /* margin-right: 50%; */
+    /* right: -640px; */
+    right: 0;
     bottom: 80px;
     z-index: 1002;
     /* height: 100vh; */
@@ -415,6 +418,8 @@ input[type="radio"]{
     width: 90%;
     border-bottom: solid 1px lightgray;
     padding-bottom: 20px;
+    height: 120px;
+    overflow-y: scroll;
 }
 .shoppingCartItem td:last-child{
     color: RGBA(63, 176, 192, 1.00);
@@ -424,7 +429,7 @@ input[type="radio"]{
 }
 .checkoutBtn{
     width: 70%;
-    margin: 0 auto;
+    margin: 20px auto;
     background-color: RGBA(63, 176, 192, 1.00);
     text-align: center;
     font-size: 22px;
@@ -437,7 +442,6 @@ input[type="radio"]{
     font-size: 14px;
     display: block;
     margin: 25px auto 10px auto;
-    height: 100vh; 
 }
 #emailInfo{
     width: 80%;
@@ -496,4 +500,5 @@ textarea{
     padding: 15px;
     text-align: center;
     margin-top: 30px;
+    cursor: pointer;
 }

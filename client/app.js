@@ -5,8 +5,7 @@ app.config(['$routeProvider','$locationProvider',function($routeProvider,$locati
     $locationProvider.html5Mode(true);
     $routeProvider
         .when('/',{
-            templateUrl: 'views/welcome.html',
-            controller: 'welcomeCtrl'
+            templateUrl: 'views/welcome.html'
         }).when('/apparel',{
             templateUrl: 'views/products.html',
             controller: 'productsCtrl',

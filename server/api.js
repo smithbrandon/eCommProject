@@ -5,7 +5,7 @@ var purchasesProducts = require('./controllers/purchasesproducts.ctrl');
 
 var router = express.Router();
 router.use('/products', products);
-// router.use('/purchases', purchases);
+router.use('/purchases', purchases);
 // router.use('/purchasesproducts', purchasesProducts);
 
 module.exports = router;

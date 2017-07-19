@@ -23,7 +23,7 @@
             </a>
         </ul>
         <div id="cartBtn" ng-click="showCart()">
-            <span>Cart</span><span class="cartEmblem">0</span>
+            <span>Cart</span><span class="cartEmblem">{{cartCnt}}</span>
         </div>
     </nav>
     <div class="staticMask" ng-show="shoppingCart" ng-click="showCart()"></div>
@@ -33,33 +33,21 @@
         </div>
         <h1 class="shoppingTitle">Your Shopping Cart</h1>
         <div id="productWindow">
-            <div class="shoppingCartItem">
+            <div class="shoppingCartItem" ng-repeat="item in items">
                 <table>
                     <tr>
-                        <td rowspan="2"><img src="/img/covalence-store-apparel-09.png"></td>
-                        <td width="70%">Covalence Mug</td>
-                        <td width="30%">$30</td>
+                        <td rowspan="2"><img ng-src="{{item.imageurl}}"></td>
+                        <td width="70%">{{item.title}}</td>
+                        <td width="30%">{{item.price}}</td>
                     </tr>
                     <tr>
-                        <td class="cartItemRemove">Remove</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="shoppingCartItem">
-                <table>
-                    <tr>
-                        <td rowspan="2"><img src="/img/covalence-store-apparel-09.png"></td>
-                        <td width="70%">Covalence Mug</td>
-                        <td width="30%">$30</td>
-                    </tr>
-                    <tr>
-                        <td class="cartItemRemove">Remove</td>
+                        <td class="cartItemRemove" ng-click="removeItem(item)">Remove</td>
                     </tr>
                 </table>
             </div>
         </div>
         <div class="shoppingCartTotal">
-            <span>Total Price</span><span>$45</span>
+            <span>Total Price</span><span>{{total}}</span>
         </div>
         <div class="taxLabel">Taxes and fees included at checkout.</div>
         <div class="checkoutBtn" ng-click="showCart('/checkout')">CHECK OUT</div>
@@ -75,13 +63,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-resource.js"></script>
     <script src="app.js"></script>
     <script src="factories/apiFactories.js"></script>
+    <script src="services/cart.svc.js"></script>
+
 
     <!-- Controller Scripts -->
     <script src="controllers/controllers.js"></script>
-    <script src="https://js.stripe.com/v3/"></script>
+     <script src="https://js.stripe.com/v3/"></script>
     <script type="text/javascript">
-        var stripe = Stripe('pk_test_someRandomKeyFromStripe');
-    </script>
+        var stripe = Stripe('pk_test_o5qo9j3jCRjlYyselLTBeVth');
+    </script> 
 </body>
 
 </html>

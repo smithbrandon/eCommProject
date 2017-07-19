@@ -16,26 +16,26 @@
             </div>
         </div>
         <div class="col-12">
-            <input type="text" class="formInput col-4" placeholder="Last">
-            <input type="text" class="formInput col-4" placeholder="First">
+            <input type="text" class="formInput col-4" placeholder="Last" ng-model="first">
+            <input type="text" class="formInput col-4" placeholder="First" ng-model="last">
             <div class="right formSub">Name</div>
         </div>
         <div class="col-12">
-            <input type="text" class="formInput col-4" placeholder="Phone">
-            <input type="text" class="formInput col-4" placeholder="Company (optional)">
+            <input type="text" class="formInput col-4" placeholder="Phone"  ng-model="phone">
+            <input type="text" class="formInput col-4" placeholder="Company (optional)"  ng-model="company">
         </div>
         <div class="col-12">
-            <input type="text" class="formInput col-3" placeholder="Address 2 (optional)">
-            <input type="text" class="formInput col-5" placeholder="Address 1">
+            <input type="text" class="formInput col-3" placeholder="Address 2 (optional)" ng-model="address1">
+            <input type="text" class="formInput col-5" placeholder="Address 1" ng-model="address2">
             <div class="right formSub">Address</div>
         </div>
         <div class="col-12">
-            <input type="text" class="col-4 formInput" placeholder="State">
-            <input type="text" class="formInput col-4" placeholder="City">
+            <input type="text" class="col-4 formInput" placeholder="State" ng-model="state">
+            <input type="text" class="formInput col-4" placeholder="City" ng-model="city">
         </div>
         <div class="col-12">
-            <input type="text" class="col-4 formInput" placeholder="United States">
-            <input type="text" class="formInput col-4" placeholder="Zip Code">
+            <input type="text" class="col-4 formInput" placeholder="United States" ng-model="country">
+            <input type="text" class="formInput col-4" placeholder="Zip Code" ng-model="zip">
         </div>
 
         <div class="formTitleBox">
@@ -62,7 +62,7 @@
         </div>
         <div class="submitBox">
             <h4 class="text-center" style="margin-top: 30px;">Almost done! Click the submit button to process your payment</h4>
-            <div class="submitBtn">Submit Your Order</div>
+            <div class="submitBtn" ng-click="process()">Submit Your Order</div>
         </div>
     </div>
     <div id="cartInfo">
@@ -71,27 +71,15 @@
             <div id="cancelBtn">
                 << Cancel and continue Shopping</div>
         </a>
-        <div class="cartItem">
+        <div class="cartItem" ng-repeat="item in items">
             <table>
                 <tr>
-                    <td rowspan="2"><img src="/img/covalence-store-apparel-09.png"></td>
-                    <td width="70%">Covalence Mug</td>
-                    <td width="30%">$30</td>
+                    <td rowspan="2"><img src="{{item.imageurl}}"></td>
+                    <td width="70%">{{item.title}}</td>
+                    <td width="30%">{{item.price}}</td>
                 </tr>
                 <tr>
-                    <td class="cartItemRemove">Remove</td>
-                </tr>
-            </table>
-        </div>
-        <div class="cartItem">
-            <table>
-                <tr>
-                    <td rowspan="2"><img src="/img/covalence-store-apparel-09.png"></td>
-                    <td width="70%">Covalence Mug</td>
-                    <td width="30%">$30</td>
-                </tr>
-                <tr>
-                    <td class="cartItemRemove">Remove</td>
+                    <td class="cartItemRemove" ng-click="">Remove</td>
                 </tr>
             </table>
         </div>
