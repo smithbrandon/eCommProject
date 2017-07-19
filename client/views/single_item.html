@@ -2,9 +2,9 @@
     <img ng-src="{{product.imageurl}}">
     <div class="itemContent">
         <div class="singleItemPrice">${{product.price}}</div>
-        <div class="singleItemTitle">{{product.title}}</div>
+        <div class="singleItemTitle">{{product.item}}</div>
         <p class="description">{{product.description}}
         </p>
-        <div class="addToCart">ADD TO CART</div>
+        <div class="addToCart" ng-click="addToCart(product)">ADD TO CART</div>
     </div>
 </div>

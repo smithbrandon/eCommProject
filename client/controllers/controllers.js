@@ -1,41 +1,76 @@
-app.controller('navCtrl', ['$scope','$location', function ($scope,$location) {
+app.controller('navCtrl', ['$scope','$rootScope','$location','cartService', function ($scope,$rootScope,$location, cartService) {
 
+    
     $scope.showCart = function(path){
         $scope.shoppingCart = !$scope.shoppingCart;
+        if($scope.shoppingCart){
+            $scope.items = cartService.show();
+            $scope.total = cartService.getTotal();
+        }
         if(path){
             $location.path(path);
         }
     }
+    $scope.removeItem = function(item){
+        cartService.removeFromCart(item)
+    }
+
     $scope.select = function(item) {
     if (item === $scope.selected) {
         $scope.selected = null;
     } else {
         $scope.selected = item;
     }
-
+            SEOService.setSEO({
+            title: 'Covalence Student Store',
+            image: 'http://' + $location.host() + "/img/covalence-store-home.jpg",
+            url: $location.url,
+            description: 'Shop the Covalence Student Store for great Merchandise'
+        });  
 };
 
-}]).controller('productsCtrl', ['$scope','Products', '$route', '$routeParams', function ($scope, Products,$route, $routeParams) {
+}]).controller('productsCtrl', ['$scope','$location','Products', '$route', '$routeParams','cartService','SEOService', function ($scope, $location, Products,$route, $routeParams,cartService,SEOService) {
+
+    //Fix error: rror: [$resource:badcfg] Error in resource configuration for action `get`. Expected response to contain an object but got an array (Request: GET /api/products)
 
     var item = $routeParams.id;
     $scope.catId = $route.current.$$route.categoryId;
-    console.log("category id: " + $scope.catId )
     if($scope.catId === 1){
         $scope.hero = '/img/covalence-store-apparel-hero.jpg';
         Products.query({productid: $scope.catId},function(success){
             $scope.products = success;
-            console.log($scope.products);
         });
-        
+        SEOService.setSEO({
+            title: 'Covalence Student Store - Apparel',
+            image: 'http://' + $location.host() + "/img/covalence-store-apparel-hero.jpg",
+            url: $location.url,
+            description: 'Shop the Covalence Student Store for great apparel'
+        });        
     }else{
         $scope.hero = '/img/covalence-store-misc-hero.jpg';
         $scope.products = Products.query({productid: $scope.catId});
+        SEOService.setSEO({
+            title: 'Covalence Student Store - Apparel',
+            image: 'http://' + $location.host() + "/img/covalence-store-misc-hero.jpg",
+            url: $location.url,
+            description: 'Shop the Covalence Student Store for great swag'
+        });    
     }
     if($routeParams){
-        $scope.product = Products.get({id: $routeParams.id});
+        $scope.product = Products.get({id: $routeParams.id},function(success){
+            SEOService.setSEO({
+                title: 'Covalence Student Store - ' + $scope.product.title,
+                image: 'http://' + $location.host() + $scope.product.imageurl,
+                url: $location.url,
+                description: 'Purchase the Covalence ' + $scope.product.title + " from the student store"
+            });   
+        });
     }
-
+    $scope.addToCart = function(item){
+        cartService.addtoCart(item);
+    }
     
+<<<<<<< HEAD
 }]).controller('contactCtrl', ['$scope', 'Mail', function ($scope, Mail) {
     var emailFrom = 'covalence.store@covalence.io';
     var emailTo = ['porter.josh@hotmail.com', 'smith.brandon.e.82@gmail.com'];
@@ -54,15 +89,47 @@ app.controller('navCtrl', ['$scope','$location', function ($scope,$location) {
     }
 
 }]).controller('checkoutCtrl', ['$scope', function ($scope) {
+=======
+}]).controller('contactCtrl', ['$scope', function ($scope) {
+        SEOService.setSEO({
+                title: 'Covalence Student Store - Contact Us',
+                image: 'http://' + $location.host() + '/img/logo-footer.svg',
+                url: $location.url,
+                description: 'Let us know what you think of the store'
+            });
+}]).controller('checkoutCtrl', ['$scope','Purchases','cartService', function ($scope,Purchases,cartService) {
+    $scope.items = cartService.show();
+     SEOService.setSEO({
+                title: 'Covalence Student Store - Checkout',
+                image: 'http://' + $location.host() + '/img/logo-footer.svg',
+                url: $location.url,
+                description: 'Puchase some great swag from the Covalence Student Shop'
+            });
+    
+>>>>>>> c891507b367345f999b9747901ac51f01f81db93
     var elements = stripe.elements();
     var card = elements.create('card');
     card.mount('#card-field');
     $scope.process = function () {
-        stripe.createToken(card).then(function (result) {
+        stripe.createToken(card,{
+            amount: 45,
+            address_line1: $scope.address1,
+            address_line2: $scope.address2,
+            address_city: $scope.city,
+            address_state: $scope.state,
+            address_country: $scope.country
+        }).then(function (result) {
             if (result.error) {
                 $scope.error = result.error.message;
+                console.log(result.error);
             } else {
-                // result.token is the actual token to send to our server
+                console.log(cartService.getTotal());
+                var payment = new Purchases({
+                    token: result.token,
+                    amount: cartService.getTotal()});
+                payment.$save(function(success){
+                    console.log('the payment has processed');
+                })
             }
         });
     }

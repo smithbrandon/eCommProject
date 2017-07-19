@@ -51,20 +51,21 @@ nav{
     height: 75px;
     position: fixed;
     display: block;
-    max-width: 1280px;
+    max-width: 1366px;
 }
 footer{
     right: 0;
     margin: 0 auto;
-    z-index: 1000;
+    z-index: 1003;
     display: block;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
+    border-top: 1px solid RGBA(216, 216, 218, 1.00);
     background-color: RGBA(244, 244, 244, 1.00);
     height: 75px;
-    max-width: 1280px;
+    max-width: 1366px;
 }
 ng-view{
     right: 0;
@@ -76,7 +77,7 @@ ng-view{
     bottom: 0;
     width: 100%;
     background-color: white;
-    max-width: 1280px;
+    max-width: 1366px;
     overflow: auto;
 }
 .copyright{
@@ -244,6 +245,7 @@ nav img{
     background-color: white;
     border-radius: 5px;
     padding: 5px 10px;
+    cursor: pointer;
 }
 table{
     display: inline-block;
@@ -370,13 +372,12 @@ input[type="radio"]{
     padding-left: 10px;
 }
 #shoppingCart{
-    position: fixed;
-    top: 80px;
-    margin-right: 50%;
-    right: -640px;
-    bottom: 80px;
+    position: relative;
+     top: 15px; 
+    float: right;
+    overflow-y: scroll;
     z-index: 1002;
-    /* height: 100vh; */
+     height: 100vh; 
     width: 400px;
     background-color:RGBA(239, 243, 246, 1.00);
     color: black;
@@ -415,6 +416,8 @@ input[type="radio"]{
     width: 90%;
     border-bottom: solid 1px lightgray;
     padding-bottom: 20px;
+    height: 120px;
+    overflow-y: scroll;
 }
 .shoppingCartItem td:last-child{
     color: RGBA(63, 176, 192, 1.00);
@@ -424,7 +427,7 @@ input[type="radio"]{
 }
 .checkoutBtn{
     width: 70%;
-    margin: 0 auto;
+    margin: 20px auto;
     background-color: RGBA(63, 176, 192, 1.00);
     text-align: center;
     font-size: 22px;
@@ -437,7 +440,6 @@ input[type="radio"]{
     font-size: 14px;
     display: block;
     margin: 25px auto 10px auto;
-    height: 100vh; 
 }
 #emailInfo{
     width: 80%;
@@ -496,4 +498,5 @@ textarea{
     padding: 15px;
     text-align: center;
     margin-top: 30px;
+    cursor: pointer;
 }
