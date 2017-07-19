@@ -36,7 +36,22 @@ app.controller('navCtrl', ['$scope','$location', function ($scope,$location) {
     }
 
     
-}]).controller('contactCtrl', ['$scope', function ($scope) {
+}]).controller('contactCtrl', ['$scope', 'Mail', function ($scope, Mail) {
+    var emailFrom = 'covalence.store@covalence.io';
+    var emailTo = ['porter.josh@hotmail.com', 'smith.brandon.e.82@gmail.com'];
+    $scope.submitForm = function() {
+        var emailContent = $scope.first + ' ' + $scope.last + ' with ' + $scope.company + ' has provided feedback, please respond in the next 24 hours. ' + $scope.first + ' wants ' + $scope.subject + '. ' + 'Their additional thoughts are ' + $scope.thoughts + '. Contact them by email -- ' + $scope.email + ', or by phone --' + $scope.phone + '.';
+        console.log('Its working');
+        var email = new Mail({
+            to: emailTo,
+            from: emailFrom,
+            subject: $scope.subject,
+            content: emailContent
+        })
+        email.$save(function(success) {
+            console.log('check email');
+        });
+    }
 
 }]).controller('checkoutCtrl', ['$scope', function ($scope) {
     var elements = stripe.elements();
