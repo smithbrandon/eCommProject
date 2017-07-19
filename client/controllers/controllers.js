@@ -40,7 +40,7 @@ app.controller('navCtrl', ['$scope','$location', function ($scope,$location) {
     var emailFrom = 'covalence.store@covalence.io';
     var emailTo = ['porter.josh@hotmail.com', 'smith.brandon.e.82@gmail.com'];
     $scope.submitForm = function() {
-        var emailContent = $scope.first + ' ' + $scope.last + ' with ' + $scope.company + ' has provided feedback, please respond in the next 24 hours. ' + $scope.first + ' wants ' + $scope.subject + '. ' + 'Their additional thoughts are ' + $scope.thoughts + '. Contact them by email -- ' + $scope.email + ', or by phone --' + $scope.phone + '.';
+        var emailContent = $scope.first + ' ' + $scope.last + ' with ' + $scope.company + ' has provided feedback, please respond in the next 24 hours. ' + $scope.first + 'would like to see: ' + $scope.subject + '. ' + 'Their additional thoughts: ' + $scope.thoughts + '. Contact them by email -- ' + $scope.email + ', or by phone -- ' + $scope.phone + '.';
         console.log('Its working');
         var email = new Mail({
             to: emailTo,
