@@ -69,11 +69,8 @@ app.controller('navCtrl', ['$scope','$rootScope','$location','cartService', func
     $scope.addToCart = function(item){
         cartService.addtoCart(item);
     }
-<<<<<<< HEAD
 
-=======
     
->>>>>>> 38e917c4a27a0461c342203d26bbf5bfd6c95a2e
 }]).controller('contactCtrl', ['$scope', 'Mail', function ($scope, Mail) {
     var emailFrom = 'covalence.store@covalence.io';
     var emailTo = ['porter.josh@hotmail.com', 'smith.brandon.e.82@gmail.com'];
