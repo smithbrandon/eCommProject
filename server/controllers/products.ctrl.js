@@ -15,7 +15,6 @@ router.route('/:id')
 
 router.route('/')
     .get(function (req, res) {
-        console.log("id: " + req.query.productid);
         procedures.all(req.query.productid)
             .then(function (categories) {
                 res.send(categories);
