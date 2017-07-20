@@ -108,7 +108,7 @@ app.controller('navCtrl', ['$scope','$window','$rootScope','$location','cartServ
         url: $location.url,
         description: 'Let us know what you think of the store'
     });
-}]).controller('checkoutCtrl', ['$scope','Purchases','SEOService','cartService','$location', function ($scope,Purchases,SEOService, cartService,$location) {
+}]).controller('checkoutCtrl', ['$scope','Purchases','SEOService','cartService','$location', 'Mail', function ($scope,Purchases,SEOService, cartService, $location, Mail) {
     $scope.items = cartService.show();
     $scope.total = cartService.getTotal();
     SEOService.setSEO({
@@ -143,5 +143,19 @@ app.controller('navCtrl', ['$scope','$window','$rootScope','$location','cartServ
             }
         });
     }
-    
+    var emailFrom = 'covalence.store@covalence.io';
+    $scope.submitForm = function() {
+        var purchases = cartService.show();
+        var emailContent = 'Thank you ' + $scope.first + ' ' + $scope.last + ' for your purchase with Covalence. We are processing your order: ' + purchases + '. Your items will be shipped to: ' + $scope.address1 + ' ' + $scope.address2 + ', ' + $scope.city + ', ' + $scope.state + ', ' + $scope.zip + ' ' + $scope.country;
+        
+        var email = new Mail({
+            to: $scope.email,
+            from: emailFrom,
+            subject: "Thank you for your recent purchase.",
+            content: emailContent
+        })
+        email.$save(function(success) {
+            console.log('check email');
+        });
+    }
 }])
