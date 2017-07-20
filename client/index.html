@@ -23,19 +23,21 @@
 
 <body>
     <nav ng-controller="navCtrl">
-        <a href="/"><img id="logo" src="img/logo.svg"></a>
+        <a href="/"><img id="logo" src="img/logo.svg" ng-hide="mobile">
+            <img class="mobile-btn" src="img/icon_home.png" ng-show="mobile">
+        </a>
         <ul>
             <a href="/apparel" ng-click="activeMenu = 'apparel'">
-                <img src="img/icon_about.png" ng-show="mobile">
+                <img class="mobile-btn" src="img/icon_about.png" ng-show="mobile">
                 <li ng-class="{active : activeMenu === 'apparel'}" ng-hide="mobile">APPAREL</li>
             </a>
             <a href="/misc" ng-click="activeMenu = 'misc'">
-                <img src="img/icon_badge.png" ng-show="mobile">
+                <img class="mobile-btn" src="img/icon_badge.png" ng-show="mobile">
                 <li ng-class="{active : activeMenu === 'misc'}">MISC</li>
             </a>
             <a href="/contactUs" ng-click="activeMenu = 'contact'">
-                <img src="img/icon_map.png" ng-show="mobile">
-                <li ng-class="{active : activeMenu === 'contact'}">CONTACT US</li>
+                <img class="mobile-btn" src="img/icon_map.png" ng-show="mobile">
+                <li ng-hide="mobile" ng-class="{active : activeMenu === 'contact'}">CONTACT US</li>
             </a>
         </ul>
         <div id="cartBtn" ng-click="showCart()">

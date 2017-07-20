@@ -1,5 +1,14 @@
-app.controller('navCtrl', ['$scope','$rootScope','$location','cartService','SEOService', function($scope,$rootScope,$location, cartService,SEOService) {
+app.controller('navCtrl', ['$scope','$window','$rootScope','$location','cartService','SEOService', function($scope,$window,$rootScope,$location, cartService,SEOService) {
+        $rootScope.mobile = true;
 
+        angular.element($window).bind('resize', function(){           
+            console.log($window.innerWidth);
+            if($window.innerWidth <= 736){
+                $rootScope.mobile === true;
+            }else{
+            $rootScope.mobile === false;
+            }
+       });    
     $scope.showCart = function(local){
         $scope.shoppingCart = !$scope.shoppingCart;
         if($scope.shoppingCart){
@@ -96,6 +105,7 @@ app.controller('navCtrl', ['$scope','$rootScope','$location','cartService','SEOS
     });
 }]).controller('checkoutCtrl', ['$scope','Purchases','SEOService','cartService','$location', function ($scope,Purchases,SEOService, cartService,$location) {
     $scope.items = cartService.show();
+    $scope.total = cartService.getTotal();
     SEOService.setSEO({
             title: 'Covalence Student Store - Checkout',
             image: 'http://' + $location.host() + '/img/logo-footer.svg',
@@ -107,7 +117,7 @@ app.controller('navCtrl', ['$scope','$rootScope','$location','cartService','SEOS
     card.mount('#card-field');
     $scope.process = function () {
         stripe.createToken(card,{
-            amount: 45,
+            amount: $scope.total,
             address_line1: $scope.address1,
             address_line2: $scope.address2,
             address_city: $scope.city,
