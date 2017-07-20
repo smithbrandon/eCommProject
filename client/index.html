@@ -19,24 +19,25 @@
     <title>{{SEO.title}}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <nav ng-controller="navCtrl">
         <a href="/"><img id="logo" src="img/logo.svg" ng-hide="mobile">
-            <img class="mobile-btn" src="img/icon_home.png" ng-show="mobile">
+            <span class="mobile-btn" ng-show="mobile"><i class="fa fa-2x fa-home" aria-hidden="true"></i></span>
         </a>
         <ul>
             <a href="/apparel" ng-click="activeMenu = 'apparel'">
-                <img class="mobile-btn" src="img/icon_about.png" ng-show="mobile">
+                <li class="mobile-btn" ng-show="mobile"><i class="fa fa-black-tie fa-2x" aria-hidden="true"></i></li>
                 <li ng-class="{active : activeMenu === 'apparel'}" ng-hide="mobile">APPAREL</li>
             </a>
             <a href="/misc" ng-click="activeMenu = 'misc'">
-                <img class="mobile-btn" src="img/icon_badge.png" ng-show="mobile">
-                <li ng-class="{active : activeMenu === 'misc'}">MISC</li>
+                <li class="mobile-btn" ng-show="mobile" ng-show="mobile"><i class="fa fa-shopping-bag fa-2x" aria-hidden="true"></i></li>
+                <li ng-class="{active : activeMenu === 'misc'}" ng-hide="mobile">MISC</li>
             </a>
             <a href="/contactUs" ng-click="activeMenu = 'contact'">
-                <img class="mobile-btn" src="img/icon_map.png" ng-show="mobile">
+                <li class="mobile-btn" ng-show="mobile"><i class="fa fa-info-circle fa-2x" aria-hidden="true"></i></li>
                 <li ng-hide="mobile" ng-class="{active : activeMenu === 'contact'}">CONTACT US</li>
             </a>
         </ul>
