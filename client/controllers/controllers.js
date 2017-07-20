@@ -133,20 +133,47 @@ app.controller('navCtrl', ['$scope','$window','$rootScope','$location','cartServ
                 $scope.error = result.error.message;
                 console.log(result.error);
             } else {
-                console.log(cartService.getTotal());
                 var payment = new Purchases({
                     token: result.token,
                     amount: cartService.getTotal()});
                 payment.$save(function(success){
                     console.log('the payment has processed');
+                    emailConfirmation();
                 })
             }
         });
     }
-    var emailFrom = 'covalence.store@covalence.io';
-    $scope.submitForm = function() {
-        var purchases = cartService.show();
-        var emailContent = 'Thank you ' + $scope.first + ' ' + $scope.last + ' for your purchase with Covalence. We are processing your order: ' + purchases + '. Your items will be shipped to: ' + $scope.address1 + ' ' + $scope.address2 + ', ' + $scope.city + ', ' + $scope.state + ', ' + $scope.zip + ' ' + $scope.country;
+    function emailConfirmation(){
+
+        var emailFrom = 'covalence.store@covalence.io';
+        var purchases = $scope.items;
+        console.log(purchases[0].title);
+        var emailContent = '<p>Thank you ' + $scope.first + ' for your purchase from the  Covalence Student Store.  ' + 'We are processing the following items from your order:  </p>\
+        <table style="display: block; width: 100%;">\
+            <thead>\
+                <tr>\
+                <th>Item</th>\
+                <th>Count</th>\
+                <th>price ea.</th>\
+                <th>Sub Total</th>\
+            </thead>\
+            <tbody>\
+                <tr>';
+                for(var i=0;i<purchases.length;i++){
+                    console.log(purchases[i].title);
+                    console.log(purchases[i].price);
+                    emailContent+='<td>'+ purchases[i].title + '</td>';
+                    emailContent+='<td>1</td>';
+                    emailContent+='<td>'+ purchases[i].price + '</td>';
+                    emailContent+='<td>'+ purchases[i].price + '</td>';
+                }
+                
+            email+='</tr></tbody\
+        <h3>SHIPPING ADDRESS:  <h3>'
+            + $scope.address1 + '<br>'
+            + $scope.address2 + '<br>'
+            + $scope.city + ', ' + $scope.state + ' ' + $scope.zip + '<br>'
+            + $scope.country;
         
         var email = new Mail({
             to: $scope.email,
