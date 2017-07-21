@@ -28,6 +28,8 @@
     nav ul li{
       width: 90%;
       display: block;
+      font-size: 1em;
+      padding: 0;
     }
     #cartContainer{
       width: 100%;
@@ -45,6 +47,15 @@
       width: 95%;
       margin: 0 auto;
       display: block;
+    }
+    .col-single{
+      width: 92%;
+    }
+    .col-4{
+      width: 92%;
+    }
+    .formSub{
+      display: none;
     }
 }
 
@@ -78,6 +89,16 @@
     }
     .titleBtn{
       top: 70%;
+    }
+    .singleItemContainer img{
+      width: 100%;
+    }
+    .itemContent{
+      width: 100%;
+      margin: 0 0 100px 0;
+    }
+    .addToCart{
+      margin: 25px auto;
     }
 }
 
@@ -147,8 +168,34 @@
     nav ul li{
       width: 90%;
       display: block;
-      font-size: 1.5em;
-      padding: 5px;
+      font-size: 1em;
+      padding: 0;
+    }
+        #cartContainer{
+      width: 100%;
+      border: none;
+    }
+    #emailInfo{
+      width: 100%;
+    }
+    p {
+      margin: 25px auto;
+      line-height: 18px;
+      width: 90%;
+    }
+    .col-12{
+      width: 95%;
+      margin: 0 auto;
+      display: block;
+    }
+    .col-single{
+      width: 92%;
+    }
+    .col-4{
+      width: 92%;
+    }
+    .formSub{
+      display: none;
     }
 }
 
@@ -241,6 +288,32 @@
       display: block;
       font-size: 1.5em;
       padding: 10px;
+    }
+        #cartContainer{
+      width: 100%;
+      border: none;
+    }
+    #emailInfo{
+      width: 100%;
+    }
+    p {
+      margin: 25px auto;
+      line-height: 18px;
+      width: 90%;
+    }
+    .col-12{
+      width: 95%;
+      margin: 0 auto;
+      display: block;
+    }
+    .col-single{
+      width: 92%;
+    }
+    .col-4{
+      width: 92%;
+    }
+    .formSub{
+      display: none;
     }
 }
 

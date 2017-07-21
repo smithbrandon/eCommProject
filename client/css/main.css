@@ -176,6 +176,7 @@ nav img{
     display: inline-block;
     width: 29%;
     margin: 0 2% 40px 2%; 
+    vertical-align: top;
 }
 .itemBox img{
     width: 100%;
@@ -359,6 +360,7 @@ td:last-child{
 }
 .text-center{
     text-align: center;
+    padding: 0 5%;
 }
 .center{
     position: relative;
