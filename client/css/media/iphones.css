@@ -11,7 +11,10 @@
     .mobile-btn{
       display: inline-block;
     }
-    nav ul{
+    nav ul.fullNav{
+      display: none;
+    }
+    .fullNav.responsive{
       display: block; 
       border-left: none;
       z-index: 1003;
@@ -25,12 +28,13 @@
       padding: 2% 0;
     }
 
-    nav ul li{
+    ul .fullnav.responsive a li{
       width: 90%;
       display: block;
       font-size: 1em;
       padding: 0;
     }
+
     #cartContainer{
       width: 100%;
       border: none;
@@ -133,7 +137,7 @@
       top: 50%;
       left: 40px;
     }
-    nav ul{
+    .fullNav.responsive{
       width: 50%;
     } 
 }
@@ -151,7 +155,10 @@
     .mobile-btn{
       display: inline-block;
     }
-    nav ul{
+    nav ul.fullNav{
+      display: none;
+    }
+    .fullNav.responsive{
       display: block; 
       border-left: none;
       z-index: 1003;
@@ -165,13 +172,13 @@
       padding: 2% 0;
     }
 
-    nav ul li{
+    .fullnav.responsive a li{
       width: 90%;
       display: block;
       font-size: 1em;
       padding: 0;
     }
-        #cartContainer{
+    #cartContainer{
       width: 100%;
       border: none;
     }
@@ -246,9 +253,12 @@
       top: 50%;
       left: 40px;
     }
-    nav ul{
+    .fullNav.responsive{
       width: 50%;
     } 
+    .fullNav.responsive li{
+      display: block;
+    }
     .itemBox {
       display: inline-block;
       width: 45%;
@@ -269,7 +279,11 @@
     .mobile-btn{
       display: inline-block;
     }
-    nav ul{
+
+        nav ul.fullNav{
+      display: none;
+    }
+    .fullNav.responsive{
       display: block; 
       border-left: none;
       z-index: 1003;
@@ -282,14 +296,17 @@
       height: auto;
       padding: 2% 0;
     }
-
-    nav ul li{
+    .fullNav.responsive li{
+      display: block;
+    }
+    .fullnav.responsive a li{
       width: 90%;
       display: block;
       font-size: 1.5em;
       padding: 10px;
     }
-        #cartContainer{
+    
+    #cartContainer{
       width: 100%;
       border: none;
     }
@@ -358,7 +375,8 @@
       width: 45%;
       margin: 0 2% 40px 2%;
     }
-    nav ul{
+    .fullNav.responsive{
       width: 50%;
-    }
+    } 
+
 }

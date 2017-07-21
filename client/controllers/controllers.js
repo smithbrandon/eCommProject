@@ -1,5 +1,14 @@
 app.controller('navCtrl', ['$scope','$window','$rootScope','$location','cartService','SEOService', function($scope,$window,$rootScope,$location, cartService,SEOService) {
-    $rootScope.navShow = false;
+    $scope.toggleNav = function(){
+        var nav = document.getElementById('nav');
+        if(nav.className === "fullNav"){
+            nav.className += " responsive";
+            $scope.navOpen = true;
+        }else{
+            nav.className = "fullNav"
+            $scope.navOpen = false;
+        }
+    }
 
     $scope.showCart = function(local){
         $scope.shoppingCart = !$scope.shoppingCart;

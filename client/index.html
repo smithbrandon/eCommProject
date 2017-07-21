@@ -28,23 +28,25 @@
 
 <body>
     <nav ng-controller="navCtrl">
-        <a href="/"><img id="logo" src="img/logo.svg"></a>
-        <span class="mobile-btn" ng-click="showNav=!showNav"><i class="fa fa-2x fa-bars" aria-hidden="true"></i></span>
-        <ul ng-show="showNav==true">
-            <a href="/" ng-click="showNav=false" ng-show="showNav==true">
+        <a href="/">
+            <img id="logo" src="img/logo.svg">
+        </a>
+        <span class="mobile-btn" ng-click="toggleNav()"><i class="fa fa-2x fa-bars" aria-hidden="true"></i></span>
+        <ul id="nav" class="fullNav">
+            <a href="/">
                 <li>HOME</li>
             </a>
-            <a href="/apparel" ng-click="activeMenu = 'apparel';showNav=false">
+            <a href="/apparel" ng-click="activeMenu = 'apparel'">
                 <li ng-class="{active : activeMenu === 'apparel' && showNav==false}">APPAREL</li>
             </a>
-            <a href="/misc" ng-click="activeMenu = 'misc';showNav=false">
-                <li ng-class="{active : activeMenu === 'misc' && showNav==false}">MISC</li>
+            <a href="/misc" ng-click="activeMenu = 'misc'">
+                <li ng-class="{active : activeMenu === 'misc'}">MISC</li>
             </a>
-            <a href="/contactUs" ng-click="activeMenu = 'contact';showNav=false">
-                <li ng-class="{active : activeMenu === 'contact' && showNav==false}">CONTACT US</li>
+            <a href="/contactUs" ng-click="activeMenu = 'contact'">
+                <li ng-class="{active : activeMenu === 'contact'}">CONTACT US</li>
             </a>
         </ul>
-        <div class="staticMask" ng-show="showNav" ng-click="showNav= !showNav"></div>
+        <div class="staticMask" ng-show="navOpen" ng-click="toggleNav()"></div>
         <div id="cartBtn" ng-click="showCart()">
             <span>Cart</span><span class="cartEmblem">{{cartCnt}}</span>
         </div>
