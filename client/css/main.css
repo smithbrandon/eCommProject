@@ -25,16 +25,14 @@ h5{
 #bg {
   position: fixed; 
   top:0;
-  left: 0;
   right: 0;
   bottom: 0; 
+  left: 0;
+  min-width: 1000px;
+  max-width: 1366px;
   width: 100%; 
-  height: 100%;
-  max-width: 1280px;
+  height: 100vh;
   margin: 0 auto;
-}
-#bg.mobile{
-    
 }
 body{
     font-family: brandon, sans-serif;
@@ -42,6 +40,7 @@ body{
     color: white;
     background-color: RGBA(29, 32, 41, 1.00);
     width: 100%;
+    font-size: 16px;
 }
 nav{
     top: 0;
@@ -56,6 +55,7 @@ nav{
     display: block;
     max-width: 1366px;
 }
+
 footer{
     right: 0;
     margin: 0 auto;
@@ -149,14 +149,15 @@ nav img{
     display: inline-block;
     position: absolute;
     top: 400px;
-    font-size: 48px;
-    left: 80px;
-    width: 350px;
+    font-size: 4em;
+    left: 5%;
+    width: 450px;
 }
 .titleBtn{
     display: inline-block;
     position: absolute;
-    top: 525px;
+    /* top: 525px; */
+    top: 70%;
     left: 80px;
     background-color: RGBA(63, 176, 192, 1.00);
     border-radius: 3px;
@@ -515,4 +516,7 @@ ul{
 }
 nav ul li.mobile-btn{
     margin: 0 7%;
+}
+.mobile-btn{
+    margin: 20px 0 0 20px;
 }

@@ -1,19 +1,6 @@
 app.controller('navCtrl', ['$scope','$window','$rootScope','$location','cartService','SEOService', function($scope,$window,$rootScope,$location, cartService,SEOService) {
-        if($window.innerWidth <= 736){
-        $rootScope.mobile = true;
-        }else{
-            $rootScope.mobile = false;
-        }
+    $rootScope.navShow = false;
 
-
-        angular.element($window).bind('resize', function(){           
-            if($window.innerWidth <= 736){
-                $rootScope.mobile = true;
-            }else{
-                $rootScope.mobile = false;
-            }
-            $rootScope.$apply();
-       });    
     $scope.showCart = function(local){
         $scope.shoppingCart = !$scope.shoppingCart;
         if($scope.shoppingCart){
