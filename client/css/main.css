@@ -91,7 +91,7 @@ nav ul.fullNav a li{
     list-style: none;
     position: relative;
     display: inline-block;
-    margin: 0 30px;
+    margin: 0 50px;
     line-height: 35px;
 }
 nav ul.fullNav a li.active{
@@ -170,7 +170,7 @@ nav img{
 .title{
     display: inline-block;
     position: absolute;
-    top: 400px;
+    top: 55%;
     font-size: 4em;
     left: 5%;
     width: 450px;
@@ -295,18 +295,18 @@ td:last-child{
 .promoBox{
     width: 90%;
     border: solid 1px RGBA(216, 216, 218, 1.00);
-    margin: 10px auto;
+    margin: 10px 5%;
     border-radius: 5px;
 }
-.promoBox div{
-    display: inline-block;
+.promoBox td:first-child{
+    padding: 0;
     background-color: white;
-    padding: 15px 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    width: 70%;
+}
+.promoBox td:last-child{
     text-align: center;
-    width: 21.5%;
-    border: none;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
 }
 .promoBox input{
     width: 70%;
@@ -534,9 +534,9 @@ textarea{
     cursor: pointer;
 }
 
-ul{
+/* ul{
     width: 55%;
-}
+} */
 nav ul li.mobile-btn{
     margin: 0 7%;
 }

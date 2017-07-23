@@ -5,6 +5,9 @@
   and (min-device-width: 320px) 
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
+    nav ul.fullNav a li {
+      display: block;
+    }
     #cartInfo, #info{
       display: block;
       width: 100%;
@@ -25,7 +28,6 @@
       position: fixed;
       top: 75px;
       left: 0;
-      width: 80%;
       background-color: rgba(0,0,0,.9);
       margin-top: 2px;
       height: auto;
@@ -147,9 +149,6 @@
       top: 50%;
       left: 40px;
     }
-    .fullNav.responsive{
-      width: 50%;
-    } 
 }
 
 /* ----------- iPhone 6 ----------- */
@@ -159,6 +158,9 @@
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2) { 
+    nav ul.fullNav a li {
+      display: block;
+    }
     #cartInfo, #info{
       display: block;
       width: 100%;
@@ -179,7 +181,7 @@
       position: fixed;
       top: 75px;
       left: 0;
-      width: 80%;
+      /* width: 80%; */
       background-color: rgba(0,0,0,.9);
       margin-top: 2px;
       height: auto;
@@ -274,9 +276,6 @@
       top: 50%;
       left: 40px;
     }
-    .fullNav.responsive{
-      width: 50%;
-    } 
     .fullNav.responsive li{
       display: block;
     }
@@ -318,7 +317,6 @@
       position: fixed;
       top: 75px;
       left: 0;
-      width: 80%;
       background-color: rgba(0,0,0,.9);
       margin-top: 2px;
       height: auto;
@@ -406,8 +404,5 @@
       width: 45%;
       margin: 0 2% 40px 2%;
     }
-    .fullNav.responsive{
-      width: 50%;
-    } 
 
 }

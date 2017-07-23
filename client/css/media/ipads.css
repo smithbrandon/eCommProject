@@ -5,6 +5,17 @@
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 1) {
+    /* .col-single{
+      width: 100%;
+    } */
+    #bg{
+      bottom: auto;
+      left: auto;
+      margin: -75px auto;
+    }
+    .col-2{
+      width: 8.33%;
+    }
     #logo{
       display: none;
     }
@@ -22,7 +33,7 @@
       position: fixed;
       top: 75px;
       left: 0;
-      width: 80%;
+      /* width: 80%; */
       background-color: rgba(0,0,0,.9);
       margin-top: 2px;
       height: auto;
@@ -45,7 +56,13 @@
   and (max-device-width: 1024px) 
   and (orientation: portrait) 
   and (-webkit-min-device-pixel-ratio: 1) {
-
+  .title{
+    top: 70%;    
+  }
+  .titleBtn{
+    top: 60%;
+    left: 40px;
+  }
 }
 
 /* Landscape */
@@ -54,7 +71,12 @@
   and (max-device-width: 1024px) 
   and (orientation: landscape) 
   and (-webkit-min-device-pixel-ratio: 1) {
-
+.title{
+      top: 50%;
+    }
+    .titleBtn{
+      top: 75%;
+    }
 }
 
 /* ----------- iPad 1 and 2 ----------- */
@@ -63,7 +85,7 @@
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 1) {
-#logo{
+    #logo{
       display: none;
     }
     .mobile-btn{
@@ -80,7 +102,7 @@
       position: fixed;
       top: 75px;
       left: 0;
-      width: 80%;
+      /* width: 80%; */
       background-color: rgba(0,0,0,.9);
       margin-top: 2px;
       height: auto;
@@ -112,7 +134,12 @@
   and (max-device-width: 1024px) 
   and (orientation: landscape) 
   and (-webkit-min-device-pixel-ratio: 1) {
-
+    .title{
+      top: 50%;
+    }
+    .titleBtn{
+      top: 75%;
+    }
 }
 
 /* ----------- iPad 3 and 4 ----------- */
@@ -121,8 +148,47 @@
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 2) {
-    
+       #bg{
+      bottom: auto;
+      left: auto;
+      margin: -75px auto;
+    }
+    .col-2{
+      width: 8.33%;
+    }
+    #logo{
+      display: none;
+    }
+    .mobile-btn{
+      display: inline-block;
+    }
 
+    nav ul.fullNav{
+      display: none;
+    }
+    .fullNav.responsive{
+      display: block; 
+      border-left: none;
+      z-index: 1003;
+      position: fixed;
+      top: 75px;
+      left: 0;
+      /* width: 80%; */
+      background-color: rgba(0,0,0,.9);
+      margin-top: 2px;
+      height: auto;
+      padding: 2% 0;
+    }
+    .fullNav.responsive li{
+      display: block;
+    }
+    .fullnav.responsive a li{
+      width: 90%;
+      display: block;
+      font-size: 1.5em;
+      padding: 10px;
+    } 
+  }
 /* Portrait */
 @media only screen 
   and (min-device-width: 768px) 
@@ -147,7 +213,7 @@
       position: fixed;
       top: 75px;
       left: 0;
-      width: 80%;
+      /* width: 80%; */
       background-color: rgba(0,0,0,.9);
       margin-top: 2px;
       height: auto;
@@ -171,5 +237,12 @@
   and (max-device-width: 1024px) 
   and (orientation: landscape) 
   and (-webkit-min-device-pixel-ratio: 2) {
+
+.title{
+      top: 50%;
+    }
+    .titleBtn{
+      top: 75%;
+    }
 
 }
