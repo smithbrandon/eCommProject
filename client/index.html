@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/media/iphones.css">
+    <link rel="stylesheet" href="/css/media/ipads.css">
+    <link rel="stylesheet" href="/css/media/desktop.css">
 
 
 </head>
@@ -34,19 +36,19 @@
         <span class="mobile-btn" ng-click="toggleNav()"><i class="fa fa-2x fa-bars" aria-hidden="true"></i></span>
         <ul id="nav" class="fullNav">
             <a href="/">
-                <li>HOME</li>
+                <li ng-click="activateClick('apparel')">HOME</li>
             </a>
-            <a href="/apparel" ng-click="activeMenu = 'apparel'">
-                <li ng-class="{active : activeMenu === 'apparel' && showNav==false}">APPAREL</li>
+            <a href="/apparel" ng-click="activateClick('apparel')">
+                <li ng-class="{active : activeMenu === 'apparel'}">APPAREL</li>
             </a>
-            <a href="/misc" ng-click="activeMenu = 'misc'">
+            <a href="/misc" ng-click="activateClick('misc')">
                 <li ng-class="{active : activeMenu === 'misc'}">MISC</li>
             </a>
-            <a href="/contactUs" ng-click="activeMenu = 'contact'">
+            <a href="/contactUs" ng-click="activateClick('contact')">
                 <li ng-class="{active : activeMenu === 'contact'}">CONTACT US</li>
             </a>
         </ul>
-        <div class="staticMask" ng-show="navOpen" ng-click="toggleNav()"></div>
+        <div class="staticNav" ng-show="navOpen" ng-click="toggleNav()"></div>
         <div id="cartBtn" ng-click="showCart()">
             <span>Cart</span><span class="cartEmblem">{{cartCnt}}</span>
         </div>
@@ -69,6 +71,7 @@
                     </table>
                 </div>
             </div>
+            <div style="clear:both"></div>
             <div class="shoppingCartTotal">
                 <span>Total Price</span><span>{{total}}</span>
             </div>

@@ -5,7 +5,38 @@
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 1) {
+    #logo{
+      display: none;
+    }
+    .mobile-btn{
+      display: inline-block;
+    }
 
+    nav ul.fullNav{
+      display: none;
+    }
+    .fullNav.responsive{
+      display: block; 
+      border-left: none;
+      z-index: 1003;
+      position: fixed;
+      top: 75px;
+      left: 0;
+      width: 80%;
+      background-color: rgba(0,0,0,.9);
+      margin-top: 2px;
+      height: auto;
+      padding: 2% 0;
+    }
+    .fullNav.responsive li{
+      display: block;
+    }
+    .fullnav.responsive a li{
+      width: 90%;
+      display: block;
+      font-size: 1.5em;
+      padding: 10px;
+    }
 }
 
 /* Portrait */
@@ -32,7 +63,38 @@
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 1) {
+#logo{
+      display: none;
+    }
+    .mobile-btn{
+      display: inline-block;
+    }
 
+    nav ul.fullNav{
+      display: none;
+    }
+    .fullNav.responsive{
+      display: block; 
+      border-left: none;
+      z-index: 1003;
+      position: fixed;
+      top: 75px;
+      left: 0;
+      width: 80%;
+      background-color: rgba(0,0,0,.9);
+      margin-top: 2px;
+      height: auto;
+      padding: 2% 0;
+    }
+    .fullNav.responsive li{
+      display: block;
+    }
+    .fullnav.responsive a li{
+      width: 90%;
+      display: block;
+      font-size: 1.5em;
+      padding: 10px;
+    }
 }
 
 /* Portrait */
@@ -59,8 +121,7 @@
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 2) {
-
-}
+    
 
 /* Portrait */
 @media only screen 
@@ -69,6 +130,39 @@
   and (orientation: portrait) 
   and (-webkit-min-device-pixel-ratio: 2) {
 
+    #logo{
+      display: none;
+    }
+    .mobile-btn{
+      display: inline-block;
+    }
+
+    nav ul.fullNav{
+      display: none;
+    }
+    .fullNav.responsive{
+      display: block; 
+      border-left: none;
+      z-index: 1003;
+      position: fixed;
+      top: 75px;
+      left: 0;
+      width: 80%;
+      background-color: rgba(0,0,0,.9);
+      margin-top: 2px;
+      height: auto;
+      padding: 2% 0;
+    }
+    .fullNav.responsive li{
+      display: block;
+    }
+    .fullnav.responsive a li{
+      width: 90%;
+      display: block;
+      font-size: 1.5em;
+      padding: 10px;
+    }
+}
 }
 
 /* Landscape */

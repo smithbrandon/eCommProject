@@ -1,4 +1,31 @@
 <div id="cartContainer">
+    <div id="cartInfo">
+        <h1 class="cartTitle">Your Shopping Cart</h1>
+        <a href="/apparel">
+            <div id="cancelBtn">
+                << Cancel and continue Shopping</div>
+        </a>
+        <div class="cartItem" ng-repeat="item in items">
+            <table>
+                <tr>
+                    <td rowspan="2"><img ng-src="{{item.imageurl}}"></td>
+                    <td width="70%">{{item.title}}</td>
+                    <td width="30%">{{item.price}}</td>
+                </tr>
+                <tr>
+                    <td class="cartItemRemove" ng-click="">Remove</td>
+                </tr>
+            </table>
+        </div>
+        <h1 class="cartTitle">Order Summary</h1>
+        <div class="promoBox">
+            <input type="text" placeholder="Discount Code">
+            <div>Apply</div>
+        </div>
+        <div class="cartTotal">
+            <span>Order Total:</span><span>{{total}}</span>
+        </div>
+    </div>
     <div id="info">
         <div class="formTitleBox">
             <div class="col-12">
@@ -16,26 +43,29 @@
             </div>
         </div>
         <div class="col-12">
-            <input type="text" class="formInput col-4" placeholder="Last" ng-model="first">
+            <div class="formSub col-2">Name</div>
             <input type="text" class="formInput col-4" placeholder="First" ng-model="last">
-            <div class="right formSub">Name</div>
+            <input type="text" class="formInput col-4" placeholder="Last" ng-model="first">
         </div>
         <div class="col-12">
+            <div class="formSub col-2"></div>
             <input type="text" class="formInput col-4" placeholder="Phone"  ng-model="phone">
             <input type="text" class="formInput col-4" placeholder="Company (optional)"  ng-model="company">
         </div>
         <div class="col-12">
-            <input type="text" class="formInput col-3" placeholder="Address 2 (optional)" ng-model="address1">
+            <div class="formSub col-2">Address</div>
             <input type="text" class="formInput col-5" placeholder="Address 1" ng-model="address2">
-            <div class="right formSub">Address</div>
+            <input type="text" class="formInput col-3" placeholder="Address 2 (optional)" ng-model="address1">
         </div>
         <div class="col-12">
-            <input type="text" class="col-4 formInput" placeholder="State" ng-model="state">
+            <div class="formSub col-2"></div>
             <input type="text" class="formInput col-4" placeholder="City" ng-model="city">
+            <input type="text" class="col-4 formInput" placeholder="State" ng-model="state">
         </div>
         <div class="col-12">
-            <input type="text" class="col-4 formInput" placeholder="United States" ng-model="country">
+            <div class="formSub col-2"></div>
             <input type="text" class="formInput col-4" placeholder="Zip Code" ng-model="zip">
+            <input type="text" class="col-4 formInput" placeholder="United States" ng-model="country">
         </div>
 
         <div class="formTitleBox">
@@ -65,31 +95,4 @@
             <div class="submitBtn" ng-click="process(); submitForm()">Submit Your Order</div>
         </div>
     </div>
-    <div id="cartInfo">
-        <h1 class="cartTitle">Your Shopping Cart</h1>
-        <a href="/apparel">
-            <div id="cancelBtn">
-                << Cancel and continue Shopping</div>
-        </a>
-        <div class="cartItem" ng-repeat="item in items">
-            <table>
-                <tr>
-                    <td rowspan="2"><img ng-src="{{item.imageurl}}"></td>
-                    <td width="70%">{{item.title}}</td>
-                    <td width="30%">{{item.price}}</td>
-                </tr>
-                <tr>
-                    <td class="cartItemRemove" ng-click="">Remove</td>
-                </tr>
-            </table>
-        </div>
-        <h1 class="cartTitle">Order Summary</h1>
-        <div class="promoBox">
-            <input type="text" placeholder="Discount Code">
-            <div>Apply</div>
-        </div>
-        <div class="cartTotal">
-            <span>Order Total:</span><span>{{total}}</span>
-        </div>
-        </div>
-    </div>
+</div>
