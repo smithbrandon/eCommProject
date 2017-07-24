@@ -20,4 +20,4 @@ app.use('/api', api);
 
 app.get('*', routing.stateRouting);
 
-app.listen(3000);
+app.listen(process.env.port);
