@@ -21,27 +21,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/media/iphones.css">
+    <link rel="stylesheet" href="/css/media/ipads.css">
+    <link rel="stylesheet" href="/css/media/desktop.css">
+
+
 </head>
 
 <body>
     <nav ng-controller="navCtrl">
-        <a href="/"><img id="logo" src="img/logo.svg" ng-hide="mobile">
-            <span class="mobile-btn" ng-show="mobile"><i class="fa fa-2x fa-home" aria-hidden="true"></i></span>
+        <a href="/">
+            <img id="logo" src="img/logo.svg">
         </a>
-        <ul>
-            <a href="/apparel" ng-click="activeMenu = 'apparel'">
-                <li class="mobile-btn" ng-show="mobile"><i class="fa fa-black-tie fa-2x" aria-hidden="true"></i></li>
-                <li ng-class="{active : activeMenu === 'apparel'}" ng-hide="mobile">APPAREL</li>
+        <span class="mobile-btn" ng-click="toggleNav()"><i class="fa fa-2x fa-bars" aria-hidden="true"></i></span>
+        <ul id="nav" class="fullNav">
+            <a href="/">
+                <li ng-click="activateClick('apparel')">HOME</li>
             </a>
-            <a href="/misc" ng-click="activeMenu = 'misc'">
-                <li class="mobile-btn" ng-show="mobile" ng-show="mobile"><i class="fa fa-shopping-bag fa-2x" aria-hidden="true"></i></li>
-                <li ng-class="{active : activeMenu === 'misc'}" ng-hide="mobile">MISC</li>
+            <a href="/apparel" ng-click="activateClick('apparel')">
+                <li ng-class="{active : activeMenu === 'apparel'}">APPAREL</li>
             </a>
-            <a href="/contactUs" ng-click="activeMenu = 'contact'">
-                <li class="mobile-btn" ng-show="mobile"><i class="fa fa-info-circle fa-2x" aria-hidden="true"></i></li>
-                <li ng-hide="mobile" ng-class="{active : activeMenu === 'contact'}">CONTACT US</li>
+            <a href="/misc" ng-click="activateClick('misc')">
+                <li ng-class="{active : activeMenu === 'misc'}">MISC</li>
+            </a>
+            <a href="/contactUs" ng-click="activateClick('contact')">
+                <li ng-class="{active : activeMenu === 'contact'}">CONTACT US</li>
             </a>
         </ul>
+        <div class="staticNav" ng-show="navOpen" ng-click="toggleNav()"></div>
         <div id="cartBtn" ng-click="showCart()">
             <span>Cart</span><span class="cartEmblem">{{cartCnt}}</span>
         </div>
@@ -64,6 +71,7 @@
                     </table>
                 </div>
             </div>
+            <div style="clear:both"></div>
             <div class="shoppingCartTotal">
                 <span>Total Price</span><span>{{total}}</span>
             </div>

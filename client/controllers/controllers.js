@@ -1,24 +1,31 @@
 app.controller('navCtrl', ['$scope','$window','$rootScope','$location','cartService','SEOService', function($scope,$window,$rootScope,$location, cartService,SEOService) {
-        if($window.innerWidth <= 736){
-        $rootScope.mobile = true;
+    $scope.toggleNav = function(){
+        var nav = document.getElementById('nav');
+        if(nav.className === "fullNav"){
+            nav.className += " responsive";
+            $scope.navOpen = true;
         }else{
-            $rootScope.mobile = false;
+            nav.className = "fullNav"
+            $scope.navOpen = false;
+            $scope.shoppingCart = false;
         }
+    }
 
-
-        angular.element($window).bind('resize', function(){           
-            if($window.innerWidth <= 736){
-                $rootScope.mobile = true;
-            }else{
-                $rootScope.mobile = false;
-            }
-            $rootScope.$apply();
-       });    
+    $scope.activateClick = function(menu){
+        var navType = document.getElementById('nav');
+        if(navType.className !== 'fullNav responsive'){
+            $scope.activeMenu = menu;
+        }
+        navType.className = 'fullNav';
+    }
     $scope.showCart = function(local){
-        $scope.shoppingCart = !$scope.shoppingCart;
         if($scope.shoppingCart){
+            $scope.shoppingCart = false;
+            $scope.navOpen = false;
+        }else{
             $scope.items = cartService.show();
             $scope.total = cartService.getTotal();
+            $scope.shoppingCart = true;
         }
         if(local){
             $location.path(local);
@@ -27,6 +34,7 @@ app.controller('navCtrl', ['$scope','$window','$rootScope','$location','cartServ
 
     $scope.removeItem = function(item){
         cartService.removeFromCart(item)
+        $scope.total = cartService.getTotal();
     }
 
     $scope.select = function(item) {
@@ -83,6 +91,7 @@ app.controller('navCtrl', ['$scope','$window','$rootScope','$location','cartServ
     }
     $scope.addToCart = function(item){
         cartService.addtoCart(item);
+        $scope.total = cartService.getTotal();
     }
 
     
