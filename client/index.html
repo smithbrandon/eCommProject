@@ -30,12 +30,12 @@
 
 <body>
     <nav ng-controller="navCtrl">
-        <a href="/">
+        <a href="/" ng-click="activateClick('')">
             <img id="logo" src="img/logo.svg">
         </a>
         <span class="mobile-btn" ng-click="toggleNav()"><i class="fa fa-2x fa-bars" aria-hidden="true"></i></span>
         <ul id="nav" class="fullNav">
-            <a href="/">
+            <a href="/" class="mobile-btn">
                 <li ng-click="activateClick('apparel')">HOME</li>
             </a>
             <a href="/apparel" ng-click="activateClick('apparel')">
